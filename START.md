@@ -20,7 +20,6 @@ node -v
 git --version
 gh auth status
 git remote get-url origin
-echo "CODESPACES=$CODESPACES"
 ```
 
 - `node -v`가 24보다 낮으면 멈추고 학생에게 Node.js 24 설치가 필요하다고 알린다.
@@ -69,8 +68,7 @@ curl -s -o /dev/null -w '%{http_code}\n' http://localhost:3000/auth
 ```
 
 - 3000 포트를 다른 프로그램이 쓰고 있으면 그 프로그램을 끄고 다시 실행한다. 다른 포트로 띄우면 로그인이 거절될 수 있다.
-- 학생에게 <http://localhost:3000>을 열어 보게 한다. Codespace 안이라면 **PORTS** 탭의 `3000` 주소를 열게 한다.
-- Codespace 안이라면 **3000 포트를 Public으로 바꾸지 말라고** 알린다. 이 서비스는 화면에서 받은 코드를 실행한다.
+- 학생에게 <http://localhost:3000>을 열어 보게 한다.
 
 ## 3. 학생에게 묻기
 
@@ -119,13 +117,3 @@ push가 거절되면 나온 글자를 그대로 보여 주고 멈춘다.
 - 학생이 직접 생각한 것
 
 이후의 작업은 `AGENTS.md`를 따른다. 이 문서는 다시 읽지 않아도 된다.
-
-## 7. Codespace에서도 열어 보기 (학생이 직접)
-
-올린 뒤에는 내 컴퓨터 없이도 열 수 있다.
-
-1. GitHub의 내 저장소에서 **Code → Codespaces → Create codespace on main**을 누른다.
-2. 준비가 끝나면 터미널에 `npm run dev`를 입력한다.
-3. **PORTS** 탭의 `3000` 주소를 연다. 사이드바 아래에 내 GitHub 아이디가 보이면 성공이다.
-
-계정과 연습용 DB는 컴퓨터마다 따로 있어서, Codespace에서는 다시 가입해야 한다.
