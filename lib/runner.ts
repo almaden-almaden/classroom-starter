@@ -17,6 +17,8 @@ export async function startLab(lesson: Lesson) {
   // 터미널에서 "node server.mjs"를 입력한 것과 같습니다.
   const child = spawn(process.execPath, [lesson.file], {
     cwd: path.join(process.cwd(), lesson.folder),
+    // 실습 코드에는 PATH만 넘깁니다. Codespace의 GitHub 토큰 같은 값이 화면에 찍히지 않게 합니다.
+    env: { PATH: process.env.PATH },
   });
   const running: Running = { id: lesson.id, child, log: '', alive: true };
 
